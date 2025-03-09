@@ -27,15 +27,13 @@ const ScrollToTop = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-4 right-4 z-50">
-      {isVisible && 
-        <button 
-          onClick={scrollToTop} 
-          className="gradient-bg text-white mr-3 p-3 rounded-full shadow-lg transition duration-300"
-        >
-          <ArrowUp size={24} />
-        </button>
-      }
+<div className={`fixed bottom-6 right-6 z-50 transition-opacity duration-600 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <button 
+        onClick={scrollToTop} 
+        className="gradient-bg text-white m-5 p-3 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-110"
+      >
+        <ArrowUp size={24} />
+      </button>
     </div>
   );
 };
